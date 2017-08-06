@@ -1,15 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StyleSheet,
+         View } from 'react-native';
 
-export default class CardSelection {
+export default class CardSection extends React.Component {
   constructor(props) {
     super(props);
-    this.props = props;
   }
 
   render() {
     return (
       <View style={ styles.containerStyle }>
+        { this.props.children }
       </View>
     );
   }

@@ -5,14 +5,13 @@ import { StyleSheet,
 export default class Card extends React.Component {
   constructor(props) {
     super(props);
-    this.props = props;
   }
 
   render() {
     return (
       // this.props.children accepts all the props (Text tag) passed down to AlbumDetail
       <View style={ styles.cardContainerStyle }>
-      { this.props.children }
+        { this.props.children }
       </View>
     );
   }
