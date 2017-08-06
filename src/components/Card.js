@@ -5,24 +5,26 @@ import { StyleSheet,
 export default class Card extends React.Component {
   constructor(props) {
     super(props);
-
+    this.props = props;
   }
 
   render() {
     return (
-      <View style={ styles.cardStyle }>
+      // this.props.children accepts all the props (Text tag) passed down to AlbumDetail
+      <View style={ styles.cardContainerStyle }>
+      { this.props.children }
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  cardStyle: {
+  cardContainerStyle: {
     borderWidth: 1,
     borderRadius: 2,
     borderColor: '#ddd',
     borderBottomWidth: 0,
-    shadow: '#000',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
