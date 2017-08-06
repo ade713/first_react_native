@@ -1,6 +1,7 @@
 import React from 'react';
 import { View,
          Image,
+         Linking,
          StyleSheet,
          Text } from 'react-native';
 
@@ -14,7 +15,7 @@ export default class AlbumDetail extends React.Component {
   }
 
   render() {
-    const { title, artist, thumbnail_image, image } = this.props.album;
+    const { title, artist, thumbnail_image, image, url } = this.props.album;
     const { thumbnailStyle,
             thumbnailContainerStyle,
             imageStyle,
@@ -39,7 +40,7 @@ export default class AlbumDetail extends React.Component {
         </CardSection>
 
         <CardSection>
-          <Button />
+          <Button onPress={ () => Linking.openURL(url) }/>
         </CardSection>
       </Card>
     );
