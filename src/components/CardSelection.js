@@ -9,15 +9,20 @@ export default class CardSelection {
 
   render() {
     return (
-      <View></View>
+      <View style={ styles.containerStyle }>
+      </View>
     );
   }
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   containerStyle: {
     borderBottomWidth: 1,
     padding: 5,
     backgroundColor: '#fff',
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    borderColor: '#ddd',
+    position: 'relative',
   }
 });
