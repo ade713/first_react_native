@@ -40,7 +40,9 @@ export default class AlbumDetail extends React.Component {
         </CardSection>
 
         <CardSection>
-          <Button onPress={ () => Linking.openURL(url) }/>
+          <Button onPress={ () => Linking.openURL(url) } >
+            Buy Now
+          </Button>
         </CardSection>
       </Card>
     );

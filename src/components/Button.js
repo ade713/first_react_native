@@ -3,13 +3,13 @@ import { StyleSheet,
          Text,
          TouchableOpacity } from 'react-native';
 
-const Button = ({ onPress }) => { // onPress here is a prop passed from Album Detail Component
+const Button = ({ onPress, children }) => { // onPress here is a prop passed from Album Detail Component
   const { buttonStyle, textStyle } = styles;
 
   return (
     <TouchableOpacity onPress={ onPress }
                       style={ buttonStyle} >
-      <Text style={ textStyle } >Click me!!!</Text>
+      <Text style={ textStyle } >{ children }</Text>
     </TouchableOpacity>
   );
 };
