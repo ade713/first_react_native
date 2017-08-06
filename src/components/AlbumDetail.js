@@ -6,6 +6,7 @@ import { View,
 
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 export default class AlbumDetail extends React.Component {
   constructor(props) {
@@ -13,19 +14,32 @@ export default class AlbumDetail extends React.Component {
   }
 
   render() {
-    const { title, artist, thumbnail_image } = this.props.album;
+    const { title, artist, thumbnail_image, image } = this.props.album;
+    const { thumbnailStyle,
+            thumbnailContainerStyle,
+            imageStyle,
+            headerTextStyle,
+            headerContentStyle } = styles; // destructuring to styles to keep code clean
 
     return (
       // Text tag being passed down as props to Card componenet
       <Card>
         <CardSection>
-        <View>
-          <Image source={ { uri: thumbnail_image } } style={ styles.thumbnailStyle }/>
+        <View style={ thumbnailContainerStyle }>
+          <Image source={ { uri: thumbnail_image } } style={ thumbnailStyle }/>
         </View>
-        <View style={ styles.headerContentStyle }>
-          <Text>{ title }</Text>
+        <View style={ headerContentStyle }>
+          <Text style={ headerTextStyle }>{ title }</Text>
           <Text>{ artist }</Text>
         </View>
+        </CardSection>
+
+        <CardSection>
+          <Image style={ imageStyle }source={ { uri: image } } />
+        </CardSection>
+
+        <CardSection>
+          <Button />
         </CardSection>
       </Card>
     );
@@ -38,8 +52,25 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
 
+  headerTextStyle: {
+    fontSize: 18,
+  },
+
   thumbnailStyle: {
     height: 50,
     width: 50,
+  },
+
+  thumbnailContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginRight: 10,
+  },
+
+  imageStyle: {
+    height: 300,
+    flex: 1,
+    width: null
   }
 });
